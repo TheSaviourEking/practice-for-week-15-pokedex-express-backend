@@ -13,6 +13,14 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
+  // sequelize = new Sequelize({
+  //   dialect: 'postgres',
+  //   host: process.env.DB_HOST,
+  //   port: 5432, // Specify the PostgreSQL port explicitly
+  //   username: process.env.DB_USERNAME,
+  //   password: String(process.env.DB_PASSWORD),
+  //   database: process.env.DB_DATABASE,
+  // });
 }
 
 fs
